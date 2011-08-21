@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SproutCore 2 Drum Sequencer</title>
+
+	<link href="stylesheets/drum_sequencer.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<script src="javascripts/vendor/jquery-1.6.2.min.js" type="text/javascript"></script>
+	<script src="javascripts/vendor/sproutcore-2.0.beta.3.min.js" type="text/javascript"></script>
+
+	<!-- Note: we'd typically use something like jammit or another packaging system to concatenate/minify all
+	     these files into a single javascript file. We don't do that for clarity in this demo. -->
+	<script src="javascripts/drum_sequencer.js" type="text/javascript"></script>
+	<script src="javascripts/model/sample.js" type="text/javascript"></script>
+	<script src="javascripts/model/step.js" type="text/javascript"></script>
+	<script src="javascripts/model/track.js" type="text/javascript"></script>
+	<script src="javascripts/model/pattern.js" type="text/javascript"></script>
+	<script src="javascripts/transport.js" type="text/javascript"></script>
+	<script src="javascripts/view/step_view.js" type="text/javascript"></script>
+	<script src="javascripts/view/track_view.js" type="text/javascript"></script>
+	<script src="javascripts/view/pattern_view.js" type="text/javascript"></script>
+	<script src="javascripts/view/transport_view.js" type="text/javascript"></script>
+	<script src="javascripts/view/button.js" type="text/javascript"></script>
+	<script src="javascripts/view/slider.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<h1>SproutCore 2 Drum Sequencer Demo</h1>
+
+	<script type="text/x-handlebars">
+		<h2>Drum Pattern</h2>
+		{{view DS.PatternView patternBinding="DS.pattern"}}
+		<p><em>activate buttons to trigger drum sounds during playback</em></p>
+
+		<h2>Playback Controls</h2>
+		{{view DS.TransportView transportBinding="DS.transport"}}
+		<p><em>keyboard shortcuts: any alphabetic key &rarr; play/stop</em></p>
+	</script>
+
+	<footer>
+		Created by Adam Murray, 2011
+	</footer>
+
+
+	<script type="text/x-handlebars" data-template-name="pattern">
+		<div class="tracks">
+			{{collection contentBinding="pattern.tracks" tagName="ul" itemViewClass="DS.TrackView"}}
+			<div class="highlight" {{bindAttr style="highlightStyle" class="highlightClass"}} />
+		</div>
+	</script>
+
+
+	<script type="text/x-handlebars" data-template-name="track">
+		{{content.name}}
+		{{collection contentBinding="content.steps" tagName="ol" itemViewClass="DS.StepView"}}
+	</script>
+
+
+	<script type="text/x-handlebars" data-template-name="step">
+		{{view SC.Button targetBinding="content" action="toggle"}}
+	</script>
+
+
+	<script type="text/x-handlebars" data-template-name="transport">
+		{{view DS.Button class="stop" title="stop" targetBinding="transport" action="stop"}}
+		{{view DS.Button class="play" title="play" targetBinding="transport" action="play"}}
+		{{view DS.Slider title="BPM" minBinding="DS.Transport.MIN_BPM" maxBinding="DS.Transport.MAX_BPM" valueBinding="transport.bpm"}}
+		{{view DS.Slider title="Volume" min="0" max="100" unit="%" valueBinding="transport.volumePercentage"}}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,129 @@
+html, body, ol, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  padding: 20px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+footer {
+  margin-top: 60px;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pattern .tracks {
+  position: relative;
+  padding-bottom: 5px;
+}
+.pattern .track {
+  white-space: nowrap;
+}
+.pattern .track .step {
+  display: inline-block;
+  padding: 6px;
+}
+.pattern .track .step button {
+  width: 50px;
+  height: 50px;
+  background: #bbbbbb;
+  border: 1px solid black;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.pattern .track .step button:hover {
+  background: #eeeeee;
+}
+.pattern .track .step.active button {
+  background: #bbffbb;
+}
+.pattern .track .step.active button:hover {
+  background: #eeffee;
+}
+.pattern .track .step:nth-child(4n) {
+  border-right: 4px double #445566;
+}
+.pattern .track .step:last-child {
+  border: none;
+}
+.pattern .track > span {
+  width: 70px;
+  float: left;
+  text-align: right;
+  margin: 20px 5px 0 0;
+}
+.pattern .track > span:after {
+  content: " :";
+}
+.pattern .highlight {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 70px;
+  background: rgba(170, 221, 255, 0.25);
+  border-radius: 16px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  border: 1px solid lightgray;
+  visibility: hidden;
+}
+
+.transport {
+  margin-top: 30px;
+}
+.transport button {
+  float: left;
+}
+.transport button.play {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+.transport button.play:after {
+  content: "\25B6";
+}
+.transport button.play:hover {
+  color: #555555;
+}
+.transport button.stop {
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  background-color: black;
+}
+.transport button.stop:hover {
+  background-color: #555555;
+}
+.transport .slider {
+  padding-top: 10px;
+  clear: left;
+}
+.transport .slider .label {
+  display: block;
+  width: 100px;
+  float: left;
+}
+.transport .slider .input {
+  clear: left;
+}
+
+.transport.playing button.play {
+  color: green;
+}
