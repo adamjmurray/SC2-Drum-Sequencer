@@ -23,6 +23,22 @@ Features
 
    * Speed (BPM, aka beats per minute) and volume controls are provided.
 
+   * The following [SproutCore 2](http://guides.sproutcore20.com/) features are demonstrated:
+       
+      * View templates and bindings. The main HTML file is beautiful in its simplicity.
+
+      * Enumerable methods, like forEach() and map()
+
+      * OO-style programming, making use of class extension
+
+      * Computed properties. Some use the amazingly powerful '@each' feature for collections (check out how conveniently the URL hash is calculated in the models' serialized() methods)
+
+      * Observers
+
+      * Two-way bindings: the slider controls both get and set model state.
+ 
+      * Custom view controls (see javascripts/view/slider.js)
+
 
 Goals
 -----
