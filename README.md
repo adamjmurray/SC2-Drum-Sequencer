@@ -1,7 +1,9 @@
 SproutCore2 Drum Sequencer 
 ==========================
 
-This is a demo application I put together for the [SproutCore Demo App Hackathon](http://demohackathon.strobeapp.com/).
+This is a demo application I put together for a SproutCore 2 Demo App Hackathon.
+
+SproutCore 2 was later renamed to [Ember.js](https://emberjs.com/). Note: This demo is very old and probably won't work with Ember.
 
 
 Usage
@@ -23,7 +25,7 @@ Features
 
    * Speed (BPM, aka beats per minute) and volume controls are provided.
 
-   * The following [SproutCore 2](http://guides.sproutcore20.com/) features are demonstrated:
+   * The following SproutCore 2 features are demonstrated:
        
       * View templates and bindings. The main HTML file is beautiful in its simplicity.
 
@@ -42,7 +44,7 @@ Features
 
 Goals
 -----
-   * Build a pure HTML/CSS/JS drum sequencer (no Flash!) with [SproutCore 2](http://guides.sproutcore20.com/)
+   * Build a pure HTML/CSS/JS drum sequencer with SproutCore 2 (a preliminary version of the framework now known as [Ember.js](https://emberjs.com/))
 
    * Use good MVC patterns
 
